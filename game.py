@@ -10,12 +10,19 @@ screen = pygame.display.set_mode((screen_width,screen_height))
 # 화면 타이틀 설정
 pygame.display.set_caption("joy Game") # 게임 이름
 
+# 배경 이미지 불러오기
+background = pygame.image.load("/home/ksh/바탕화면/pygame_basic/background.jpg")
+
 # 이벤트 루프
 running = True 
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: # 창이 닫히는 이벤트가 발생하였는가?
             running = False
+
+    screen.blit(background,(0,0)) # 배경 그리기
+
+    pygame.display.update() # 프레임 단위로 동작
 
 # pygame 종료
 pygame.quit()
